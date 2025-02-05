@@ -1,0 +1,27 @@
+@import 'tailwindcss';
+
+@layer components {
+  .moment {
+    @apply bg-background z-10 mx-auto flex cursor-pointer flex-col items-center gap-2 rounded-lg p-4 duration-500 ease-in-out;
+  }
+
+  .moment:hover {
+    @apply scale-105;
+  }
+
+  .moment-header {
+    @apply flex flex-col items-center;
+  }
+
+  .moment-date {
+    @apply text-primary text-base font-semibold;
+  }
+
+  .moment-title {
+    @apply text-primary text-xl font-semibold;
+  }
+
+  .moment-description {
+    @apply text-text text-sm;
+  }
+}

@@ -1,28 +1,24 @@
 @import 'tailwindcss';
 
-@theme {
-  --color-background: #f3f3f2;
-  --color-primary: #c099a0;
-  --color-secondary: #e4d2d8;
-  --color-accent: #e5e4e6;
-  --color-text: #474a4d;
-}
-
 @layer components {
   .timeline {
     @apply bg-accent absolute left-1/2 z-0 h-full w-1 rounded-full;
   }
 
+  .timeline-wrapper {
+    @apply mx-auto max-w-2xl py-[25dvh];
+  }
+
   .timeline-container {
-    @apply relative mx-auto max-w-2xl px-2;
+    @apply relative mx-auto px-2;
   }
 
   .timeline-content {
-    @apply flex flex-col-reverse;
+    @apply flex flex-col;
   }
 
   .timeline-card {
-    @apply bg-background z-10 mx-2 my-8 flex max-w-3xs cursor-pointer flex-col gap-2 rounded-lg p-4 duration-150;
+    @apply bg-background z-10 mx-2 my-8 flex max-w-3xs cursor-pointer flex-col gap-2 rounded-lg p-4 duration-500;
   }
 
   .timeline-card:first-child {

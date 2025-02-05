@@ -1,28 +1,34 @@
 import { ScrollFromBottom } from './components/etc'
+import { FirstMoment, ThisMoment } from './components/moments'
 import {
   Timeline,
   TimelineCard,
   TimelineContainer,
   TimelineContent,
+  TimelineWrapper,
 } from './components/timeline'
-import { data } from './data'
+import { events, firstMoment } from './data'
 
 const App = () => {
   return (
     <div className='bg-background text-text min-h-screen'>
-      <TimelineContainer>
-        <Timeline />
-        <TimelineContent>
-          {data.map((event, index) => (
-            <TimelineCard
-              key={index}
-              {...event}
-              position={index % 2 === 0 ? 'left' : 'right'}
-            />
-          ))}
-        </TimelineContent>
-      </TimelineContainer>
-      <ScrollFromBottom />
+      <TimelineWrapper>
+        <FirstMoment {...firstMoment} />
+        <TimelineContainer>
+          <Timeline />
+          <TimelineContent>
+            {events.map((event, index) => (
+              <TimelineCard
+                key={index}
+                {...event}
+                position={index % 2 === 0 ? 'left' : 'right'}
+              />
+            ))}
+          </TimelineContent>
+        </TimelineContainer>
+        <ThisMoment firstDay={firstMoment.date} />
+        <ScrollFromBottom />
+      </TimelineWrapper>
     </div>
   )
 }

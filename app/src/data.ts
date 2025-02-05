@@ -1,4 +1,4 @@
-export const data = [
+export const events = [
   {
     date: '2025-01-01',
     title: 'Happy New Year!',
@@ -51,3 +51,9 @@ export const data = [
     description: 'This is a description of the event',
   },
 ]
+
+export const firstMoment = {
+  date: '2018-10-05',
+  title: 'First Day!',
+  description: 'This is a description of the event',
+}
