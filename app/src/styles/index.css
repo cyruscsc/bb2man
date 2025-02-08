@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+@import './core.css';
 @import './timeline.css';
 @import './moment.css';
 

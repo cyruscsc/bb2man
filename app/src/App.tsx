@@ -1,4 +1,4 @@
-import { ScrollFromBottom } from './components/etc'
+import { Footer, ScrollFromBottom } from './components/core'
 import { FirstMoment, ThisMoment } from './components/moments'
 import {
   Timeline,
@@ -29,6 +29,7 @@ const App = () => {
         <ThisMoment firstDay={firstMoment.date} />
         <ScrollFromBottom />
       </TimelineWrapper>
+      <Footer />
     </div>
   )
 }

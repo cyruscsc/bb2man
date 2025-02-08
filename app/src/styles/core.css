@@ -1,0 +1,19 @@
+@import 'tailwindcss';
+
+@layer components {
+  .footer {
+    @apply bg-background text-text flex flex-col items-center justify-center gap-1 p-2;
+  }
+
+  .footer-icon {
+    @apply h-10 w-10;
+  }
+
+  .footer-text {
+    @apply text-secondary text-sm;
+  }
+
+  .footer-copyright {
+    @apply text-text my-1 text-xs font-light;
+  }
+}
