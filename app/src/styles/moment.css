@@ -2,7 +2,9 @@
 
 @layer components {
   .moment {
-    @apply bg-background z-10 mx-auto flex cursor-pointer flex-col items-center gap-2 rounded-lg p-4 duration-500 ease-in-out;
+    @apply bg-background z-10 mx-auto w-full max-w-3xs cursor-pointer rounded-lg p-4 duration-500 ease-in-out;
+    @apply flex flex-col items-start gap-2;
+    @apply sm:items-center;
   }
 
   .moment:hover {
@@ -10,7 +12,8 @@
   }
 
   .moment-header {
-    @apply flex flex-col items-center;
+    @apply flex flex-col items-start;
+    @apply sm:items-center;
   }
 
   .moment-date {

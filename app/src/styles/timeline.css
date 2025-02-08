@@ -2,7 +2,7 @@
 
 @layer components {
   .timeline {
-    @apply bg-accent absolute left-1/2 z-0 h-full w-1 rounded-full;
+    @apply bg-accent absolute left-1/5 z-0 h-full w-1 rounded-full sm:left-1/2;
   }
 
   .timeline-wrapper {
@@ -13,42 +13,55 @@
     @apply relative mx-auto px-2;
   }
 
+  .timeline-card-outer:first-child {
+    @apply mt-16;
+  }
+
   .timeline-content {
     @apply flex flex-col;
   }
 
-  .timeline-card {
-    @apply bg-background z-10 mx-2 my-8 flex max-w-3xs cursor-pointer flex-col gap-2 rounded-lg p-4 duration-500;
-  }
-
-  .timeline-card:first-child {
-    @apply mt-16;
-  }
-
-  .timeline-card:last-child {
+  .timeline-card-outer:last-child {
     @apply mb-16;
   }
 
-  .timeline-card.left {
-    box-shadow:
-      2px 2px 4px var(--color-background),
-      inset -12px -12px 12px var(--color-background),
-      inset 2px 2px 4px var(--color-accent);
-    @apply mr-auto;
-  }
-
-  .timeline-card.left:hover {
-    box-shadow:
-      2px 2px 4px var(--color-accent),
-      inset 12px 12px 12px var(--color-background);
-  }
-
-  .timeline-card.right {
+  .timeline-card {
     box-shadow:
       -2px 2px 4px var(--color-background),
       inset 12px -12px 12px var(--color-background),
       inset -2px 2px 4px var(--color-accent);
-    @apply ml-auto;
+    @apply bg-background z-10 mx-2 my-8 ml-auto w-full max-w-3xs cursor-pointer rounded-lg p-4 text-left duration-500;
+    @apply flex flex-col gap-2;
+  }
+
+  .timeline-card:hover {
+    box-shadow:
+      -2px 2px 4px var(--color-accent),
+      inset -12px 12px 12px var(--color-background);
+    @apply -translate-y-0.5 translate-x-0.5;
+  }
+
+  .timeline-card.left {
+    @media (width >= 40rem /* 640px */) {
+      box-shadow:
+        2px 2px 4px var(--color-background),
+        inset -12px -12px 12px var(--color-background),
+        inset 2px 2px 4px var(--color-accent);
+    }
+    @apply sm:mr-auto sm:ml-0;
+  }
+
+  .timeline-card.left:hover {
+    @media (width >= 40rem /* 640px */) {
+      box-shadow:
+        2px 2px 4px var(--color-accent),
+        inset 12px 12px 12px var(--color-background);
+    }
+    @apply sm:-translate-x-0.5;
+  }
+
+  .timeline-card.right {
+    @apply sm:text-right;
   }
 
   .timeline-card.right:hover {
@@ -74,6 +87,6 @@
   }
 
   .timeline-pointer {
-    @apply bg-secondary absolute left-1/2 hidden h-1 w-4 -translate-x-1.5 translate-y-4 rounded-full sm:block;
+    @apply bg-secondary absolute left-1/5 h-1 w-4 -translate-x-1.5 translate-y-20 rounded-full sm:left-1/2;
   }
 }
