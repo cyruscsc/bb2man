@@ -5,8 +5,22 @@
     @apply bg-accent absolute left-1/5 z-0 h-full w-1 rounded-full sm:left-1/2;
   }
 
+  .timeline-outer {
+    @apply relative mx-auto w-full max-w-2xl overflow-scroll scroll-smooth;
+    @apply flex-1;
+  }
+
+  .timeline-outer::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+  }
+
+  .timeline-outer {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
   .timeline-wrapper {
-    @apply mx-auto max-w-2xl py-[25dvh];
+    @apply relative mx-auto max-w-2xl py-[25dvh];
   }
 
   .timeline-container {

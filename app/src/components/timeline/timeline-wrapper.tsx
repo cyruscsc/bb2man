@@ -5,7 +5,11 @@ interface TimelineWrapperProps {
 }
 
 const TimelineWrapper = ({ children }: TimelineWrapperProps) => {
-  return <div className='timeline-wrapper'>{children}</div>
+  return (
+    <div className='timeline-outer'>
+      <div className='timeline-wrapper'>{children}</div>
+    </div>
+  )
 }
 
 export default TimelineWrapper

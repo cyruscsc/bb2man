@@ -5,7 +5,11 @@ interface CarouselWrapperProps {
 }
 
 const CarouselWrapper = ({ children }: CarouselWrapperProps) => {
-  return <div className='carousel-wrapper'>{children}</div>
+  return (
+    <div className='carousel-outer'>
+      <div className='carousel-wrapper'>{children}</div>
+    </div>
+  )
 }
 
 export default CarouselWrapper

@@ -1,6 +1,11 @@
 @import 'tailwindcss';
 
 @layer components {
+  .carousel-outer {
+    @apply relative mx-auto w-full max-w-2xl overflow-hidden;
+    @apply flex flex-1 flex-col items-center justify-center;
+  }
+
   .carousel-wrapper {
     @apply relative mx-auto h-72 w-full max-w-md;
   }

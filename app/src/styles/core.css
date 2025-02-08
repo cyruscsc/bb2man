@@ -1,6 +1,10 @@
 @import 'tailwindcss';
 
 @layer components {
+  .app-wrapper {
+    @apply bg-background text-text flex h-screen flex-col;
+  }
+
   .footer {
     @apply bg-background text-text flex flex-col items-center justify-center gap-1 p-2;
   }
@@ -10,7 +14,7 @@
   }
 
   .footer-text {
-    @apply text-secondary text-sm;
+    @apply text-primary text-sm;
   }
 
   .footer-copyright {

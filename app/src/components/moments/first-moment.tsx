@@ -1,17 +1,17 @@
+import { Event } from '../../../types'
+
 interface FirstMomentProps {
-  date: string
-  title: string
-  description: string
+  event: Event
 }
 
-const FirstMoment = ({ date, title, description }: FirstMomentProps) => {
+const FirstMoment = ({ event }: FirstMomentProps) => {
   return (
     <div className='moment'>
       <div className='moment-header'>
-        <h2 className='moment-date'>{date}</h2>
-        <h2 className='moment-title'>{title}</h2>
+        <h2 className='moment-date'>{event.date}</h2>
+        <h2 className='moment-title'>{event.title}</h2>
       </div>
-      <p className='moment-description'>{description}</p>
+      <p className='moment-description'>{event.content}</p>
     </div>
   )
 }
