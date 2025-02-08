@@ -1,5 +1,6 @@
 @import 'tailwindcss';
 @import './core.css';
+@import './mode-toggle.css';
 @import './timeline.css';
 @import './moment.css';
 @import './carousel.css';

@@ -6,7 +6,9 @@
   }
 
   .timeline-outer {
-    @apply relative mx-auto w-full max-w-2xl overflow-scroll scroll-smooth;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    @apply relative mx-auto w-full max-w-2xl overflow-scroll scroll-smooth transition-opacity duration-500 ease-in-out;
     @apply flex-1;
   }
 
@@ -14,9 +16,12 @@
     display: none; /* Chrome, Safari and Opera */
   }
 
-  .timeline-outer {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
+  .timeline-outer.show {
+    @apply visible opacity-100;
+  }
+
+  .timeline-outer.hide {
+    @apply invisible absolute h-0 w-0 opacity-0;
   }
 
   .timeline-wrapper {

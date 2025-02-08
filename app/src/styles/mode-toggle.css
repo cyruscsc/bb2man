@@ -1,0 +1,27 @@
+@import 'tailwindcss';
+
+@layer components {
+  .mode-toggle-wrapper {
+    @apply bg-secondary relative mx-auto h-8 w-16 cursor-pointer rounded-lg;
+  }
+
+  .mode-toggle-btn {
+    @apply bg-background absolute top-1 h-6 w-6 rounded-lg shadow-md transition-transform duration-500 ease-in-out;
+  }
+
+  .mode-toggle-icon-container {
+    @apply absolute top-1 h-6 w-6 transition-opacity duration-200;
+  }
+
+  .mode-toggle-icon-container.left {
+    @apply translate-x-2;
+  }
+
+  .mode-toggle-icon-container.right {
+    @apply translate-x-8;
+  }
+
+  .mode-toggle-icon {
+    @apply text-text h-6 w-6;
+  }
+}

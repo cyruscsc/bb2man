@@ -5,8 +5,12 @@
     @apply bg-background text-text flex h-screen flex-col;
   }
 
+  .header {
+    @apply bg-background text-text w-full pt-8 pb-12;
+  }
+
   .footer {
-    @apply bg-background text-text flex flex-col items-center justify-center gap-1 p-2;
+    @apply bg-background text-text flex flex-col items-center justify-center gap-1 pt-12 pb-2;
   }
 
   .footer-icon {
