@@ -1,3 +1,4 @@
+import { Carousel } from './components/carousel'
 import { Footer, ScrollFromBottom } from './components/core'
 import { FirstMoment, ThisMoment } from './components/moments'
 import {
@@ -13,7 +14,7 @@ const App = () => {
   return (
     <div className='bg-background text-text min-h-screen'>
       <TimelineWrapper>
-        <FirstMoment {...firstMoment} />
+        {/* <FirstMoment {...firstMoment} />
         <TimelineContainer>
           <Timeline />
           <TimelineContent>
@@ -26,7 +27,8 @@ const App = () => {
             ))}
           </TimelineContent>
         </TimelineContainer>
-        <ThisMoment firstDay={firstMoment.date} />
+        <ThisMoment firstDay={firstMoment.date} /> */}
+        <Carousel events={events} />
         <ScrollFromBottom />
       </TimelineWrapper>
       <Footer />
