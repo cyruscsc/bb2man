@@ -24,4 +24,20 @@
   .footer-copyright {
     @apply text-text my-1 text-xs font-light;
   }
+
+  .spinner-container {
+    @apply flex flex-1 items-center justify-center;
+  }
+
+  .spinner {
+    @apply border-accent border-t-primary h-8 w-8 animate-spin rounded-full border-4 border-t-4;
+  }
+
+  .error-container {
+    @apply flex flex-1 items-center justify-center;
+  }
+
+  .error {
+    @apply text-primary text-center;
+  }
 }

@@ -6,14 +6,20 @@ import {
   CarouselCardWrapper,
   CarouselWrapper,
 } from '.'
-import { Event } from '../../../types'
+import { useEvents } from '../hooks'
+import { Error, Spinner } from '../core'
 
-interface CarouselProps {
-  events: Event[]
-}
-
-const Carousel = ({ events }: CarouselProps) => {
+const Carousel = () => {
+  const { events, isLoading, error } = useEvents()
   const [activeIndex, setActiveIndex] = useState(0)
+
+  if (isLoading) {
+    return <Spinner />
+  }
+
+  if (error) {
+    return <Error error={error} />
+  }
 
   return (
     <CarouselWrapper>

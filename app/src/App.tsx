@@ -7,8 +7,8 @@ const App = () => {
   return (
     <AppWrapper>
       <Header />
-      <Timeline events={events} />
-      <Carousel events={events} />
+      <Timeline />
+      <Carousel />
       <Footer />
     </AppWrapper>
   )

@@ -1,5 +1,4 @@
-import { Event } from '../../../types'
-import { ScrollFromBottom } from '../core'
+import { Error, ScrollFromBottom, Spinner } from '../core'
 import { FirstMoment, ThisMoment } from '../moments'
 import {
   TimelineAxis,
@@ -8,12 +7,19 @@ import {
   TimelineContent,
   TimelineWrapper,
 } from '.'
+import { useEvents } from '../hooks'
 
-interface TimelineProps {
-  events: Event[]
-}
+const Timeline = () => {
+  const { events, isLoading, error } = useEvents()
 
-const Timeline = ({ events }: TimelineProps) => {
+  if (isLoading) {
+    return <Spinner />
+  }
+
+  if (error) {
+    return <Error error={error} />
+  }
+
   return (
     <TimelineWrapper>
       <FirstMoment event={events[0]} />
@@ -22,7 +28,7 @@ const Timeline = ({ events }: TimelineProps) => {
         <TimelineContent>
           {events.map((event, index) => (
             <TimelineCard
-              key={index}
+              key={event.id}
               event={event}
               position={index % 2 === 0 ? 'left' : 'right'}
             />
