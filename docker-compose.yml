@@ -1,0 +1,28 @@
+version: '3'
+services:
+  react:
+    image: <registry-domain>/bb2man-react:latest
+    platform: linux/amd64
+    container_name: bb2man-react
+    restart: unless-stopped
+    ports:
+      - "5173:80"
+    networks:
+      - app-network
+
+  strapi:
+    image: <registry-domain>/bb2man-strapi:latest
+    platform: linux/amd64
+    container_name: bb2man-strapi
+    restart: unless-stopped
+    ports:
+      - "1337:1337"
+    volumes:
+      - ./strapi/.tmp:/app/.tmp
+      - ./strapi/public/uploads:/app/public/uploads
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

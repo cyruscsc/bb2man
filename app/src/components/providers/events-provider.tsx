@@ -1,7 +1,6 @@
 import { ReactNode, useEffect, useState } from 'react'
 import { EventsContext } from '../../contexts'
 import { APIRespone, Event } from '../../types'
-import { API_TOKEN } from '../../config'
 import axios, { AxiosError } from 'axios'
 
 interface EventsProviderProps {
@@ -20,15 +19,9 @@ const EventsProvider = ({ children }: EventsProviderProps) => {
         setError(null)
 
         const base_url = import.meta.env.VITE_API_BASE_URL
-        const token = API_TOKEN
-
-        if (!token) {
-          throw new Error('API token not found in environment variables')
-        }
 
         const response = await axios.get<APIRespone>(`${base_url}/events`, {
           headers: {
-            Authorization: `Bearer ${token}`,
             'Content-Type': 'application/json',
           },
         })
