@@ -26,7 +26,11 @@ const EventsProvider = ({ children }: EventsProviderProps) => {
           },
         })
 
-        setEvents(response.data.data)
+        setEvents(
+          response.data.data.sort(
+            (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()
+          )
+        )
       } catch (error) {
         if (error instanceof AxiosError) {
           setError(
