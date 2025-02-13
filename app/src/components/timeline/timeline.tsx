@@ -20,13 +20,17 @@ const Timeline = () => {
     return <Error error={error} />
   }
 
+  if (events.length < 2) {
+    return <Error error='Add more events to continue' />
+  }
+
   return (
     <TimelineWrapper>
       <FirstMoment event={events[0]} />
       <TimelineContainer>
         <TimelineAxis />
         <TimelineContent>
-          {events.map((event, index) => (
+          {events.slice(1).map((event, index) => (
             <TimelineCard
               key={event.id}
               event={event}

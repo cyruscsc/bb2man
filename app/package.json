@@ -1,8 +1,9 @@
 {
   "name": "bb2man-app",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
+  "description": "bb2man React App",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",

@@ -22,6 +22,6 @@
   }
 
   .mode-toggle-icon {
-    @apply text-text h-6 w-6;
+    @apply text-background h-6 w-6;
   }
 }

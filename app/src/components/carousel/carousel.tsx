@@ -21,6 +21,10 @@ const Carousel = () => {
     return <Error error={error} />
   }
 
+  if (events.length < 2) {
+    return <Error error='Add more events to continue' />
+  }
+
   return (
     <CarouselWrapper>
       <CarouselPrevButton
